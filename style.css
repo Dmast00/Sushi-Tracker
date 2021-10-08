@@ -105,8 +105,7 @@ body{
 }
 .section:hover{
     box-shadow: var(--box-shadow2);
-    transform: scale(1.055);
-    
+    transform: scale(1.055);   
 }
 .btn-add{
     height: 25%;

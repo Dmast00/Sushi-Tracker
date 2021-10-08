@@ -3,7 +3,7 @@ let order = document.querySelector('.orders');
 
 
 
-function AddOrder(){
+function AddOrder(orderName,orderPrice){
     div = document.createElement('div');
     div.className = `section`;
     
@@ -12,11 +12,11 @@ function AddOrder(){
     p2 =document.createElement('p');
     
     b2 = document.createElement('b');
-    b2.textContent = `Sushi roll`
+    b2.textContent = orderName
 
     p = document.createElement('p');
     br = document.createElement('b')
-    br.textContent = `$140.00`
+    br.textContent = orderPrice
     
     p2.append(b2)
     p.append(br);
@@ -60,8 +60,19 @@ window.onclick = function(event){
 }
 
 function AddNewOrder(){
-    var orderName = document.getElementById('input-order-name').value;
-    var orderPrice = document.getElementById('input-order-price').value;
+    var orderName = document.querySelector('#input-order-name');
+    var orderPrice = document.getElementById('input-order-price');
+    
+    if(orderName.value.trim() === '' || orderPrice.value.trim() === '' ){
+        console.log('cannot enter empty values');
+    }
+    else{
+        AddOrder(orderName.value,orderPrice.value)
+        console.log(orderName.value)
+        console.log(orderPrice.value)
+    }
 
-    console.log(`${orderName} and ${orderPrice}`)
+    orderName.value = ' ';
+    orderPrice.value = ' ';
+    modal.style.display = 'none'
 }

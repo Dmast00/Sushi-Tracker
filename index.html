@@ -13,7 +13,7 @@
         <h1>Sushi tracker</h1>
     </div>
     <div class="container">
-        <button class="btn-add" onclick="AddOrder()">
+        <button id="myBtn" class="btn-add" onclick="AddOrder()">
             Agregar orden
         </button>
         <div class="left ">
@@ -32,10 +32,10 @@
             <h1>Status</h1>
             <div>
                 <ul class="progressbar">
-                    <li class="active">Elaborando</li>
+                    <li class="active">Procesando</li>
                     <li class="active">Preparando</li>
-                    <li class="">Enviando</li>
-                    <li class="">Finalizado</li>
+                    <li class="">Enviado</li>
+                    <li class="">entregado</li>
 
                 </ul>
             </div>
@@ -43,10 +43,24 @@
                 <button class="btn"><i class="fa fa-bell"  style="font-size:24px"></i></button>
             </div> -->
         </div>
-        
-        <div>
-
-            
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span id="close" class="close">&times;</span>
+                <div class="content-modal">
+                    <p><h3>lorem</h3></p>
+                </div>
+                <div class="modal-container">
+                    <form id="form-order" class="form">
+                        <label  for="order-name">order</label>
+                        <input id="input-order-name" type="text" name="order-name" placeholder="order name">
+                        <label for="order-price">order price</label>
+                        <input id="input-order-price" type="text" name="order-price" placeholder="order price">
+                        
+                    </form>
+                    <button class="btn-add-order" onclick="AddNewOrder()">Add</button>
+                </div>
+                
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

@@ -1,6 +1,8 @@
 let order = document.querySelector('.orders');
 
 
+
+
 function AddOrder(){
     div = document.createElement('div');
     div.className = `section`;
@@ -35,4 +37,31 @@ function AddOrder(){
 
 function generateId(){
     return Math.floor(Math.random()*1000000);
+}
+
+// modal
+var modal = document.getElementById('myModal');
+var btn = document.getElementById('myBtn');
+var span = document.getElementById('close');
+
+btn.onclick = function(){
+    modal.style.display = "block";
+}
+console.log(`${modal.className}`)
+
+span.onclick = function(){
+    modal.style.display = "none";
+}
+console.log(`${span.className}`)
+window.onclick = function(event){
+    if(event.target == modal ){
+        modal.style.display = "none";
+    }
+}
+
+function AddNewOrder(){
+    var orderName = document.getElementById('input-order-name').value;
+    var orderPrice = document.getElementById('input-order-price').value;
+
+    console.log(`${orderName} and ${orderPrice}`)
 }
